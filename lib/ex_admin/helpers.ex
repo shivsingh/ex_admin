@@ -272,6 +272,7 @@ defmodule ExAdmin.Helpers do
                 raise ExAdmin.RuntimeError, message: "Could not find field #{inspect field} in #{inspect resource}"
             end
         end
+        |> ExAdmin.Render.to_string # added by Shiv
       _ ->
         raise ExAdmin.RuntimeError, message: "Resource must be a struct"
     end

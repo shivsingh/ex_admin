@@ -38,7 +38,8 @@ defmodule ExAdmin.Table do
                     tr do
                       value = ExAdmin.Render.to_string(v)
                       field_header "#{f_name} #{k}"
-                      td ".td-#{parameterize k} #{value}"
+                      # ExAdmin.Render.to_string added by Shiv
+                      td ".td-#{parameterize k} #{v |> ExAdmin.Render.to_string }"
                     end
                   end
                 contents, f_name ->
